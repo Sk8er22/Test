@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVPlayerViewControllerDelegate {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            let videoURL = URL(string: "http://techslides.com/demos/sample-videos/small.mp4")
+            
+            let player = AVPlayer(url:videoURL!)
+            
+            let playerController = AVPlayerViewController()
+            playerController.player = player
+            playerController.delegate = self
+            self.present(playerController, animated: true, completion: {player.play()} )
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
