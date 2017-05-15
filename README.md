@@ -1,4 +1,4 @@
-# Testasda 
+# AVPlayerController plugin: detects Pause/Play/stop
 
 This is an example of AVPlayerController plugin for get notify when people pause/resume a video without a custom layer.
 
