@@ -19,7 +19,7 @@ after that, once you have your AVPlayer, you need to use
 ```
 self.controlPlugin.addObserver(player: self.player)
 ```
-To set the ''rate'' and ''playerDidFinishPlaying'' observers.
+To set the ''rate'' and ''playerDidFinishPlaying'' observers.  
 And thats all... this plugin will show you on console a message when:
 - Video ends
 - User Play
