@@ -15,6 +15,7 @@
 		570B09BB1EC5A852009B0ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570B09B91EC5A852009B0ACD /* LaunchScreen.storyboard */; };
 		570B09C61EC5A852009B0ACD /* PluginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B09C51EC5A852009B0ACD /* PluginTests.swift */; };
 		570B09D11EC5A852009B0ACD /* PluginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B09D01EC5A852009B0ACD /* PluginUITests.swift */; };
+		57E26F8D1EC9DAFC00B2F804 /* ControlPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E26F8C1EC9DAFC00B2F804 /* ControlPlugin.swift */; };
 		B3AA2FD0C686006A3D141863 /* Pods_PluginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF2D4F92A1C40716CE08DF2C /* Pods_PluginUITests.framework */; };
 		FCA3707FD2E630AF90E6812A /* Pods_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1099E3978083B3A008A319A9 /* Pods_Plugin.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		570B09CC1EC5A852009B0ACD /* PluginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PluginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570B09D01EC5A852009B0ACD /* PluginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginUITests.swift; sourceTree = "<group>"; };
 		570B09D21EC5A852009B0ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E26F8C1EC9DAFC00B2F804 /* ControlPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPlugin.swift; sourceTree = "<group>"; };
 		82B44A20A77B3DD0C1F65F97 /* Pods-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plugin/Pods-Plugin.release.xcconfig"; sourceTree = "<group>"; };
 		8B845733B5C9B1FBA6B73223 /* Pods-PluginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PluginTests/Pods-PluginTests.release.xcconfig"; sourceTree = "<group>"; };
 		A3166C4A0298C58C01CE608D /* Pods-PluginUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PluginUITests/Pods-PluginUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				570B09B01EC5A852009B0ACD /* AppDelegate.swift */,
 				570B09B21EC5A852009B0ACD /* ViewController.swift */,
+				57E26F8C1EC9DAFC00B2F804 /* ControlPlugin.swift */,
 				570B09B41EC5A852009B0ACD /* Main.storyboard */,
 				570B09B71EC5A852009B0ACD /* Assets.xcassets */,
 				570B09B91EC5A852009B0ACD /* LaunchScreen.storyboard */,
@@ -447,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570B09B31EC5A852009B0ACD /* ViewController.swift in Sources */,
+				57E26F8D1EC9DAFC00B2F804 /* ControlPlugin.swift in Sources */,
 				570B09B11EC5A852009B0ACD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
