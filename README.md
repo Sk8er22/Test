@@ -1,6 +1,6 @@
 # AVPlayerController plugin: detects Pause/Play/End Video
 
-This is an example of AVPlayerController plugin for get notify when people pause/resum/end Video without a custom layer.
+This is an example of AVPlayerController plugin to get notifications when people pause/resum/end Video without a custom layer.
 
 ## Install
 You will need to copy
@@ -31,4 +31,4 @@ Also you can recibe a String with all this information using the following funct
 var finalmessage = controlPlugin.end()
 ```
 
-## IMPORTANT FOR WORK CORRECTLY THE VIDEO HAS TO START PLAYING
+## IMPORTANT TO WORK CORRECTLY, THE VIDEO MUST START PLAYING
