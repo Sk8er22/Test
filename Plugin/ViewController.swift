@@ -9,7 +9,10 @@
 import UIKit
 import Foundation
 import AVKit
+import Alamofire
+import SwiftyJSON
 import AVFoundation
+
 
 class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     
@@ -27,7 +30,7 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.request()
         let videoURL = URL(string: "http://techslides.com/demos/sample-videos/small.mp4")
         
         player = AVPlayer(url:videoURL!)
@@ -85,6 +88,7 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     
     func playerDidFinishPlaying(note: NSNotification) {
         print("Video Finished")
+        counterPauses -= 1
         dismiss(animated: true, completion: nil)
     }
     
@@ -122,21 +126,19 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     }
     
     
-    func httpRequest (){
-    _ = URLSession.shared.dataTask(with: urlRequest!) { data, response, error in
-    guard error == nil else {
-    print(error!)
-    return
-    }
-    guard let data = data else {
-    print("Data is empty")
-    return
-    }
-    
-    let json = try! JSONSerialization.jsonObject(with: data, options: [])
-    print(json)
-    }
+    func request (){
+        let parameters = ["q": "Barcelona", "appid": "b1b15e88fa797225412429c1c50c122a1"]
+        //?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1
+            Alamofire.request("https://httpbin.org/get", parameters: parameters) .responseJSON { response in
+            print(response.request)  // original URL request
+            print(response.response) // HTTP URL response
+            print(response.data)     // server data
+            print(response.result)   // result of response serialization
+            
+            if let valueResponse = response.result.value {
 
-    }
+            let json = JSON(valueResponse)
+            }
+        }}
 }
 
