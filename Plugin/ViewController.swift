@@ -23,7 +23,6 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     var counterPauses = 0
     var counterPlays = -1
     var timer = Timer()
-    var finalMessage: String = ""
     var controlPlugin = ControlPlugin()
     
     
@@ -40,7 +39,7 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
         //present playerController
         self.present(playerController, animated: true, completion: {
             
-
+            
             
             //autoplay at the start
             self.player.play()
@@ -61,11 +60,18 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) { //when end the video and get close
         player.pause() //important if the user click DONE
-        controlPlugin.end()
-
+        
+        let finalmessage = controlPlugin.end()
+        
+        //create ALERT
+        let alertController = UIAlertController(title: "FINISHED", message:"\(finalmessage)",preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        print("\(finalmessage)")
     }
     
     
-
+    
 }
 
