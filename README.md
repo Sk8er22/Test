@@ -15,7 +15,7 @@ First of all you will have to instance it in your Controller
 ```
 var controlPlugin = ControlPlugin()
 ```
-after that once you have your AVPlayer you will use
+after that, once you have your AVPlayer, you need to use
 ```
 self.controlPlugin.addObserver(player: self.player)
 ```
@@ -24,5 +24,10 @@ And thats all... this plugin will show you on console a message when:
 - Video ends
 - User Play
 - User Pause
+
+Also you can recibe a String with all the information using the function:
+```
+var finalmessage = controlPlugin.end()
+```
 
 ## IMPORTANT FOR WORK CORRECTLY THE VIDEO HAS TO START PLAYING
