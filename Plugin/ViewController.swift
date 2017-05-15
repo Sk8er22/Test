@@ -26,7 +26,7 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     var isTimerRunning = false
     var finalMessage: String = ""
     let urlRequest = URL(string: "https://www.google.com")
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,19 +97,19 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
-   
+    
     func updateTimer() {
         counterSeconds += 0.1     //This will decrement(count down)the seconds.
     }
     
-  
+    
     func timeString(time:TimeInterval) -> String {
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
-   
+    
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -127,17 +127,20 @@ class ViewController: UIViewController, AVPlayerViewControllerDelegate {
     
     
     func request (){
-        let parameters = ["q": "Barcelona", "appid": "b1b15e88fa797225412429c1c50c122a1"]
+        let parameters = ["q": "Barcelona", "APPID": "a51c02180847521c7f27d3ee317ec388"]
         //?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1
-            Alamofire.request("https://httpbin.org/get", parameters: parameters) .responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+        Alamofire.request("http://api.openweathermap.org/data/2.5/forecast", parameters: parameters) .responseJSON { response in
+            //  print(response.request)  // original URL request
+            //  print(response.response) // HTTP URL response
+            //  print(response.data)     // server data
+            //  print(response.result)   // result of response serialization
             
-            if let valueResponse = response.result.value {
-
-            let json = JSON(valueResponse)
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("PRUEBA DE REQUEST\nEL TIEMPO EN BARCELONA ES: \(json["list"][0]["weather"][0]["description"])")
+            case .failure(let error):
+                print(error)
             }
         }}
 }
